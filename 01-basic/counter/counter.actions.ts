@@ -1,4 +1,4 @@
-import { Action } from './../fake-ngrx/ngrx';
+import { Action } from '../fake-ngrx/ngrx';
 
 // Actions
 export const increaseAction: Action = {

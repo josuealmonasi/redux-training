@@ -1,4 +1,4 @@
-import { Action } from './../fake-ngrx/ngrx';
+import { Action } from '../fake-ngrx/ngrx';
 
 export function counterReducer(state = 10, action: Action) {
   switch (action.type) {
