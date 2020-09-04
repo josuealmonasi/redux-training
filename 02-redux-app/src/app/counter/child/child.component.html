@@ -1,5 +1,5 @@
 <h3>Child Counter</h3>
-<h4>{{ counter }}</h4>
+<h4>{{ count$ | async }}</h4>
 <div class="row text-center">
   <div class="col">
     <button style="margin: 10px" class="btn btn-primary" (click)="multiply()">
@@ -11,4 +11,4 @@
   </div>
 </div>
 <hr />
-<app-grand-child [counter]="counter"> </app-grand-child>
+<app-grand-child> </app-grand-child>

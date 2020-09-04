@@ -1,3 +1,4 @@
+import { AppState } from './app.reducer';
 import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { Component } from '@angular/core';
@@ -12,7 +13,7 @@ export class AppComponent {
   /* counter: number; */
   count$: Observable<number>;
 
-  constructor(private store: Store<{ count: number }>) {
+  constructor(private store: Store<AppState>) {
     this.count$ = store.pipe(select('count'));
     /* this.store.subscribe(state => {
       this.counter = state.count;
