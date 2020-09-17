@@ -1,11 +1,12 @@
-import { TodoModule } from './todos/todo.module';
+import { TodoModule } from '@app/todos/todo.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { FooterComponent } from './layout/footer/footer.component';
+import { AppComponent } from '@app/app.component';
+import { FooterComponent } from '@app/layout/footer/footer.component';
 import { StoreModule } from '@ngrx/store';
-import { todoReducer } from './todos/reducers/todos.reducer';
+import { todoReducer } from '@app/todos/reducers/todos.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent],
@@ -13,6 +14,7 @@ import { todoReducer } from './todos/reducers/todos.reducer';
     BrowserModule,
     TodoModule,
     StoreModule.forRoot({ todos: todoReducer }),
+    StoreDevtoolsModule.instrument({ logOnly: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent],

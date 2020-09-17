@@ -1,9 +1,15 @@
 import { createReducer, on } from '@ngrx/store';
-import * as todosActions from '../actions/todos.actions';
+import * as todosActions from '@app/todos/actions/todos.actions';
+import { Todo } from '@app/todos/models/todo.model';
 import * as uuid from 'uuid';
-import { Todo } from '../models/todo.model';
 
-export const initialState: Array<Todo> = [];
+export const initialState: Array<Todo> = [
+  {
+    completed: false,
+    id: '1',
+    text: 'test todo',
+  },
+];
 
 const _todosReducer = createReducer(
   initialState,
