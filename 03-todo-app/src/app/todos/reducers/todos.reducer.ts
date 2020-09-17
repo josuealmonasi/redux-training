@@ -1,4 +1,4 @@
-import { createReducer, on } from '@ngrx/store';
+import { Action, createReducer, on } from '@ngrx/store';
 import * as todosActions from '@app/todos/actions/todos.actions';
 import { Todo } from '@app/todos/models/todo.model';
 import * as uuid from 'uuid';
@@ -19,6 +19,6 @@ const _todosReducer = createReducer(
   ]),
 );
 
-export function todoReducer(state, action) {
+export function todoReducer(state: Todo[], action: Action) {
   return _todosReducer(state, action);
 }
